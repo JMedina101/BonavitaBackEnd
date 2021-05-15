@@ -1,0 +1,216 @@
+
+/* TABLES */
+.table {
+    position: relative;
+    top: 100px;
+}
+tr:nth-child(odd) {
+    background-color: #dddddd;
+}
+.accept-table {
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+td, th{
+    border: 1px solid #dddddd;
+    padding: 10px;
+}
+
+.accept-table__heading {
+    text-align: left;
+    background-color: rgb(119, 211, 223) !important;
+    border-radius: 20px;
+}
+
+/* admin priviledges */
+.content-container{
+    padding: 13px 20px 0 20px;
+}
+.content__heading {
+    margin-bottom: 40px;
+    padding: 10px;
+    text-align: center;
+}
+
+
+.form  {
+  display: flex;
+  justify-content: center;
+}
+
+.admin-input {
+    display: inline-block;
+    width: 20%;
+    padding: 4px;
+    font-family: 'Poppins';
+}
+.admin-Heading__container {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.edit-btn {
+    color: blue;
+    text-decoration: none;
+}
+
+.delete-btn {
+    color: red;
+    text-decoration: none;
+}
+
+/* media query */
+@media screen and (max-width: 1368px){
+  .admin-Heading__container{
+    font-size: 18px;
+  }
+
+  .content__heading{
+      font-size: 18px;
+    }
+
+  .accept-table__heading{
+    font-size: 18px;
+  }
+
+  .accept-table tr td{
+    font-size: 15px;
+  }
+
+  .admin-input{
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 992px){
+  .admin-Heading__container{
+    font-size: 18px;
+    padding-bottom: 17.5px;
+  }
+
+  .content__heading{
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+  .accept-table__heading{
+    font-size: 18px;
+  }
+
+  .accept-table tr td{
+    font-size: 15px;
+  }
+
+  .admin-input{
+    margin-right: 10px;
+  }
+
+}
+
+@media screen and (max-width: 768px){
+  .admin-Heading__container{
+    font-size: 17px;
+    padding-bottom: 15px;
+  }
+
+  .content__heading{
+      font-size: 17px;
+      margin-bottom: 25px;
+    }
+
+  .accept-table__heading{
+    font-size: 17px;
+  }
+
+  .accept-table tr td{
+    font-size: 14px;
+  }
+
+  .admin-input{
+    margin-right: 10px;
+  }
+
+  td ,th{
+    padding: 8px;
+  }
+}
+
+@media screen and (max-width: 600px){
+  .admin-Heading__container{
+    font-size: 13px;
+    padding-bottom: 12.5px;
+  }
+
+  .content-container{
+    padding: 7px 20px 0 20px;
+  }
+
+  .content__heading{
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+  .accept-table__heading{
+    font-size: 13px;
+  }
+
+  .accept-table tr td{
+    font-size: 11px;
+  }
+
+  .admin-input{
+    margin-right: 10px;
+  }
+
+  td ,th{
+    padding: 7.5px;
+  }
+}
+
+@media screen and (max-width: 420px){
+  .edit-btn{
+    padding: 5px;
+  }
+
+  .delete-btn{
+    text-align: center;
+  }
+
+  .adminRole-container{
+    display: grid;
+    text-align: center;
+  }
+
+  .admin-Heading__container{
+    font-size: 11px;
+  }
+
+  .content-container{
+    padding: 5px 10px 0 10px;
+  }
+
+  .content__heading{
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+
+  .accept-table__heading{
+    font-size:9px;
+    text-align: center;
+  }
+
+  .accept-table tr td{
+    font-size: 9px;
+  }
+
+  .admin-input{
+    width: 100%;
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+
+  td ,th{
+    padding: 3px 3px 3px 3px;
+  }
+}

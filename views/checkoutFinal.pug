@@ -1,0 +1,205 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  link(rel='stylesheet' href='resources/CSS/shared/utilities.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='css/client/utlities.css')
+  link(rel='stylesheet' href='css/client/checkout.css')
+  link(rel='preconnect' href='https://fonts.gstatic.com')
+  link(href='https://fonts.googleapis.com/css2?family=Poppins:wght@200;500;700;800&display=swap' rel='stylesheet')
+  script(src='js/menu.js' async='')
+  script(src="js/toggleCheckout.js" async='') 
+  //- script(src='js/index.js' async='')
+  title Document
+header.header
+  .container
+    .navbar
+      .logo
+        a(href='/')
+          img.img-logo(src=`img/${profile.logo}` width='200px')
+      .socials
+        ul
+          li
+            a(href=`${profile.lazadaUrl}`)
+              img.social(src='img/lazada-logo.png' height='40px')
+          li
+            a(href=`${profile.facebookUrl}`)
+              img.social(src='img/facebook-logo.png' height='40px')
+      nav
+        ul#lists
+          li
+            a(href='/#products') Products
+          li
+            a(href='/testimonials') Testimonials
+          li 
+            a(href="/faq") Faq
+          li 
+            a(href='/userProfile') My Profile
+          li
+            a(href='/logout') Logout
+          
+      img#menuIcon.menu(src='img/menu-bar.png' onclick='openmenu()')
+// kulang na lang yung breakdown ng each value sa home address
+.shipping-wrapper
+-var count = 1;
+  .shipping-container
+    form(action="/orderSummary" method="POST")
+      .shipping-heading
+        h1 Checkout Information
+      .shipping__descrip-container
+        .home-address
+          h1
+            span.number_head 1
+            |  Home addresses
+          .name.address
+            p Full Name
+            input.shipping-fields.name(type='text' required='' value=`${user.name}` name="name")
+          .mobile-number.address.sameWidth
+            p  Mobile Number
+            input#phonenum.shipping-fields.mobile-number(type='tel' aria-label='Phone Number' name="phoneNumber" required='true' value=`${user.phoneNumber}`)
+          input.street(type='radio' name='shippingLoc' value=`ShippingLoc${count}`)
+          label(for='loc') Home address: #{userShipping.homeAddress}, Street: #{userShipping.Street}, Subdv: #{userShipping.Subdv}, Barangay: #{userShipping.Barangay}, City: #{userShipping.City},  PostalCode: #{userShipping.postalCode}
+          br
+          input(type="hidden" name=`predHomeAddress[val][]` value=`${userShipping.homeAddress}`)
+          input(type="hidden" name=`predStreet[val][]` value=`${userShipping.Street}`)
+          input(type="hidden" name=`predSubdv[val][]` value=`${userShipping.Subdv}`)
+          input(type="hidden" name=`predBarangay[val][]` value=`${userShipping.Barangay}`)
+          input(type="hidden" name=`predCity[val][]` value=`${userShipping.City}`)
+          input(type="hidden" name=`predPostalCode[val][]` value=`${userShipping.postalCode}`)
+          each addresses in address
+            - count++;
+            input.street(type='radio' name='shippingLoc' value=`ShippingLoc${count}`)
+            label(for='loc') Home address: #{addresses.homeAddress}, Street: #{addresses.Street},  Subdv: #{addresses.Subdv}, Barangay: #{addresses.Barangay}, City: #{addresses.City},  PostalCode: #{addresses.postalCode}
+            br
+            input(type="hidden" name=`predHomeAddress[val][]` value=`${addresses.homeAddress}`)
+            input(type="hidden" name=`predStreet[val][]` value=`${addresses.Street}`)
+            input(type="hidden" name=`predSubdv[val][]` value=`${addresses.Subdv}`)
+            input(type="hidden" name=`predBarangay[val][]` value=`${addresses.Barangay}`)
+            input(type="hidden" name=`predCity[val][]` value=`${addresses.City}`)
+            input(type="hidden" name=`predPostalCode[val][]` value=`${addresses.postalCode}`)
+          
+          input#other(type='radio' name='shippingLoc' value='other')
+          label(for='others') Others
+          br
+          br
+          #province.province.address.sameWidth
+            p Province
+            select.shipping-fields.location-select(name='provinceLocation' id='' aria-placeholder='location' required='true')
+              option( disabled='' selected='') Select
+              each shippingLoc in shipping
+                option(value=`${shippingLoc.location}`)=shippingLoc.location
+          #notes.other-notes.address
+            p Other notes
+            input.shipping-fields.notes(type='text' placeholder=''  name="notes")
+          #others-address__container.others-address__container
+            .home-address_complete.address.sameWidth
+              p House/Unit/Flr #, Bldg Name, Blk or Lot #
+              input.display.shipping-fields.home-input__address(type='text' required='true' name="homeAddress")
+            .street-name.address.sameWidth
+              p * Street Name 
+              input.shipping-fields.street-name(type='text' name="streetName")
+            .subd-name.address.sameWidth
+              p *Village/Subdivision
+              input.shipping-fields.subdiv-name(type='text' name="subdv")
+            .barangay.address.address.sameWidth
+              p Barangay
+              input.display.shipping-fields.barangay__address(type='text' placeholder='' required='true' name="Barangay")
+            .city.address.sameWidth
+              p City/Municipality
+              input.display.shipping-fields.city__address(type='text' placeholder='' required='true' name="city")
+            .province.address.sameWidth
+              p Province
+              select.display.shipping-fields.location-select(name='provinceLocation' id='' aria-placeholder='location' required='true')
+                option( disabled='' selected='') Select
+                each shippingLoc in shipping
+                  option(value=`${shippingLoc.location}`)=shippingLoc.location
+            .postal.address.sameWidth
+              p Postal Code
+              input.display.shipping-fields.postal__address(type='text' placeholder='1000' required='true' name="postalCode")
+            .other-notes.address
+              p Other notes
+              input.shipping-fields.notes(type='text' placeholder='' name="notes")
+        .payment-method
+          h1
+            span.number_head 2
+            |  Payment Method
+          input(type='radio' required='true' name="modeOfPayment" value="cod")
+          label(for='') Cash upon delivery
+        .summary
+          h1
+            span.number_head 3
+            |  Summary
+          table.table-summary
+            tr
+              th Quantity
+              th Product Name
+              th Original Price
+              th Total Price
+              
+              - for(var i= 0; i < arrayProduct.length; i++) {
+              tr
+                  td= arrayQuantity[i]
+                  td= arrayProduct[i].ProductName
+                  td= arrayProduct[i].ProductPrice
+                  td= Math.round(productPrice[i]*100)/100
+                  input(type="hidden" value=`${arrayProduct[i].id}` name="productId[val][]")
+                  input(type="hidden" value=`${arrayQuantity[i]}` name="itemQuantity[val][]")
+                  input(type="hidden" value=`${productPrice[i]}` name="productPrice[val][]")
+                
+              -}
+          h1 Sub Total: #{roundedSubTotal}
+          .shippingDisclaimer
+            h4 * Shipping Fees are being calculated,proceed to View Summary
+        .line
+        .form-submit
+          a.form-back(href='/') Go back? 
+          a(href='/success')
+            input(type='submit' onclick="window.location.href = '/success';" value='View Summary')
+       
+          input(type="hidden" value=`${roundedSubTotal}` name="totalPrice")
+
+.floating-cart
+  a(href='cart.html' onclick='increaseNumber()')
+    i.fa.fa-shopping-cart
+  span.number 0
+// ? footer
+footer.footer
+  .footer-container
+    .footer-fill
+      .footer-brand
+         ul.brand
+          h3=  profile.companyName
+          if profile.CpNum
+            p Cellphone Number: #{profile.CpNum} 
+          br
+          if profile.TelNum
+            p telephone Number: #{profile.TelNum}
+          br
+          p= profile.Address
+      .footer-social-links
+        ul.social-links
+          li
+            h3 Follow Us:
+          li
+            if profile.facebookUrl
+              a(href=`${profile.facebookUrl}`) Facebook
+          li
+            if profile.twiterUrl
+              a(href=`${profile.twiterUrl}`) Twitter
+          li
+            if profile.instagramUrl
+              a(href=`${profile.instagramUrl}`) Instagram
+      .footer-contact-info
+        ul.contact-info
+          li
+            a(href='aboutus.html') About Us
+          li
+            a(href='') Terms and Conditions
+          li
+            a(href='') Privacy Policy
+          li
+            a(href='faq.html') FAQ
+  .company
+    p &copy; 2021 #{profile.companyName}. All rights reserved.

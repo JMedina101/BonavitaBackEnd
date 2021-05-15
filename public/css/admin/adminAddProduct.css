@@ -1,0 +1,50 @@
+.content-heading {
+    text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+body{
+    background-color: #E5E8E8;
+    margin: 0;
+    padding: 0;
+    font-family: poppins;
+}
+form {
+    align-content: center;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: white;
+    display: table;
+    margin: auto auto 50px auto;
+    box-shadow: 2px 2px 5px #CCD1D1;
+    width: 80%;
+    height: 50%;
+}
+#formtitle{
+    font-size: 40px;
+    text-align: center;
+    padding: 20px;
+}
+input{
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+}
+textarea{
+    height: 200px;
+    width: 100%;
+}
+button{
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    padding: 12px;
+    background-color: #219E97;
+    border-radius: 7px;
+    color: white;
+    float: left;
+}

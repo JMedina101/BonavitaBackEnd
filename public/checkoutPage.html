@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="resources/CSS/shared/utilities.css">
+  <script src= "resources/JS/index.js" async></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="resources/CSS/private/breadcrumbs.css">
+  <link rel="stylesheet" href="resources/CSS/private/main.css">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;500;700;800&display=swap" rel="stylesheet">
+  <title>Document</title>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+        <div class ="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="resources/img/bonavita-logo.png" class="img-logo" width="180px"></a>
+            </div>
+            <div class="socials">
+                <ul>
+                    <li><a href="https://www.lazada.com.ph/shop/bonavita-philippines/"><img src="resources/img/lazada-logo.png" height="50px" class="social"></a></li>
+                    <li><a href="https://www.facebook.com/bonavitaphilippines2016"><img src="resources/img/facebook-logo.png"height="50px"class="social"></a></li>
+                </ul>
+            </div>
+            <nav>
+              <ul id="lists">
+                <li><a href="index.html#products">Products</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="myAccount.html">My Account</a></li>
+                <li><a href="faq.html">FAQs</a></li>
+                <li><a href="login.html">Log Out</a></li>
+            </ul>
+            </nav>
+            <img src="resources/img/menu-bar.png" class="menu" onclick="openmenu()">
+        </div>
+    </div>
+</header>
+  <!-- kulang na lang yung breakdown ng each value sa home address -->
+      <div class="shipping-wrapper">
+        <div class="shipping-container">
+          <form>
+          <div class="shipping-heading">
+            <h1>Checkout Information</h1>
+          </div>
+          <div class="shipping__descrip-container">
+              <div class="home-address">
+                  <h1><span class="number_head">1</span> Home address</h1>
+                  <div class="home-address-input">
+                    <div class="name address">
+                      <p>Full Name</p>
+                      <input type="text" placeholder="Juan dela Cruz" class="shipping-fields name" required>
+                    </div>
+                    
+                    <div class="mobile-number address">
+                      <p> Mobile Number</p>
+                      <input type="tel" placeholder="09020202020" class="shipping-fields mobile-number" id="phonenum" name="phonenum" aria-label="Phone Number" required><br>
+                    </div>
+
+                    <label for="address1">
+                      <input type="radio" id="address1" name="select-address" value=""onclick="hideContainer()">
+                      1234 Street Sampaloc, Manila
+                    </label><br>
+  
+                    <label for="address2">
+                      <input type="radio" id="address2" name="select-address" value=""onclick="hideContainer()">
+                      1111 Street Nasugbu, Batangas
+                    </label><br>
+  
+                    <label for="address3">
+                      <input type="radio" id="address3" name="select-address" value=""onclick="hideContainer()">
+                      1234 Random Street Sta. Rosa, Laguna
+                    </label><br>
+  
+                    <label for="other">
+                      <input type="radio" id="other" name="select-address" value="" onclick="showContainer()">
+                      Other
+                    </label><br>
+  
+                    <div class="other-address-container" id="other-address-container">
+                      
+                      <div class="home-address_complete address ">
+                        <p>House/Unit/Flr #, Bldg Name, Blk or Lot #</p>
+                        <input type="text" placeholder="Please enter your complete and exact shipping address" class="shipping-fields home-input__address" required>
+                      </div>
+    
+                      <div class="province address">
+                        <p>Province</p>
+                        <select name="" id="" aria-placeholder="location" class="shipping-fields location-select" required>
+                          <option value="" disabled selected>Select location</option>
+                          <option value="">Cebu</option>
+                          <option value="">NCR</option>
+                          <option value="">Laguna</option>
+                        </select>
+                      </div>
+    
+                      <div class="city address">
+                        <p>City/Municipality</p>
+                        <input type="text" placeholder="" class="shipping-fields city__address" required>
+                      </div>
+    
+                      <div class="barangay address">
+                        <p>Barangay</p>
+                        <input type="text" placeholder="" class="shipping-fields barangay__address" required>
+                      </div>
+    
+                      <div class="postal address">
+                        <p>Postal Code</p>
+                        <input type="text" placeholder="1000"  class="shipping-fields postal__address" required>
+                      </div>
+                    </div>
+                    <div class="dropdown-content address">
+                      <p>Address</p>
+                      <select name="" id="" aria-placeholder="location" class="shipping-fields location-select" required>
+                        <option value="" disabled selected>Select location</option>
+                        <option value="">Sampaloc, Manila</option>
+                        <option value="">Sm Sta. Mesa</option>
+                        <option value="">1234 Street Brgy 1111 Antipolo, Rizal</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                    <div class="other-notes address">
+                      <p>Other notes</p>
+                      <input type="text" placeholder="" class="shipping-fields notes" required>
+                    </div>
+                  </div>
+              </div>
+              
+              <div class="payment-method">
+                <h1><span class="number_head">2</span> Payment Method</h1>
+                <div class="payment-method-input">
+                  <input type="radio" id="COD" required> <label for="COD">Cash upon delivery</label>
+                </div>
+              </div>
+              <div class="summary">
+                <h1><span class="number_head">3</span> Summary</h1>
+                <table class="table-summary">
+                  <tr>
+                    <th></th>
+                    <th>Original Price</th>
+                    <th>Total Price</th>
+                  </tr>
+                  <tr>
+                    <td>1x Gulatatione</td>
+                    <td>50</td>
+                    <td>100</td>
+                  </tr>
+                  <tr>
+                    <td>2x Soap</td>
+                    <td>50</td>
+                    <td>100</td>
+                  </tr>
+                  <tr>
+                    <td>Shipping Fee</td>
+                    <td>100</td>
+                    <td>100</td>
+                  </tr>
+                </table>
+                <h1>Sub Total: 300</h1>
+              </div>
+              <div class="line"></div>
+              <div class="form-submit">
+                <a href="cart.html" class="form-back">Go back? </a>
+                <a href="success.html"><input type="submit" onclick="window.location.href = 'success.html';"value="Complete Payment"></a>
+              </div>
+          </div>
+          </form>
+        </div>
+      </div>
+      <div class="floating-cart">
+        <a href="cart.html" onclick="increaseNumber()"><i class="fa fa-shopping-cart"></i></a>
+        <span class="number">0</span>
+    </div>
+      <!--? footer -->
+    <footer class="footer">
+      <div class="footer-container">
+          <div class="footer-fill">
+              <div class="footer-brand">
+                  <ul class="brand">
+                      <h3> Bonavita</h3>
+                      <li>Unit 311, 4th Floor, Armal Plaza, C. Raymundo Ave, Brgy Maybunga 1600 Pasig, Philippines</li>
+                    </ul>
+              </div>
+              <div class="footer-social-links">
+                  <ul class="social-links">
+                      <li> <h3>Follow Us:</h3></li>
+                      <li><a href="https://www.facebook.com/bonavitaphilippines2016">Facebook</a></li>
+                      <li><a href="https://www.lazada.com.ph/shop/bonavita-philippines/">Lazada</a></li>
+                  </ul>
+              </div>
+              <div class="footer-contact-info">
+                <ul class="contact-info">
+                  <li><a href="aboutus.html">About Us</a></li>
+                  <li><a href="">Terms and Conditions</a></li>
+                  <li><a href="">Privacy Policy</a></li>
+                  <li><a href="faq.html">FAQ</a></li>
+              </ul>
+              </div>
+          </div>
+      </div>
+      <div class="company">
+          <p>&#169; 2021 Bonavita Philippines. All rights reserved.</p>
+      </div>
+  </footer>
+</body>
+</html>

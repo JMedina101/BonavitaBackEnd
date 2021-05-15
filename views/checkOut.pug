@@ -1,0 +1,58 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='css/client/main.css')
+  link(rel='preconnect' href='https://fonts.gstatic.com')
+  link(href='https://fonts.googleapis.com/css2?family=Poppins:wght@200;500;700;800&display=swap' rel='stylesheet')
+  title Document
+// kulang na lang yung breakdown ng each value sa home address
+.shipping-wrapper
+  .shipping-container
+    .shipping-heading
+      h1 Checkout Information
+    .shipping__descrip-container
+      .home-address
+        h1
+          span.number 1
+          |  Home address
+        .home-address_complete.address
+          input.shipping-fields.home-input__address(type='text' placeholder='Input your full home address')
+        .home-address_location.address
+          select.shipping-fields.location-select(name='' id='' aria-placeholder='location')
+            option(value='' disabled='' selected='') Select location
+            option(value='') Cebu
+            option(value='') Makati
+        .postal-code.address
+          input.shipping-fields.postal-code(type='text' placeholder='Postal Code')
+      .payment-method
+        h1
+          span.number 2
+          |  Payment Method
+        input(type='radio')
+        label(for='') Cash upon delivery
+        input(type='radio')
+        label(for='') Paypal
+      .summary
+        h1
+          span.number 3
+          |  Summary
+        table.table-summary
+          tr
+            th
+            th Original Price
+            th Total Price
+          tr
+            td 1x Gulatatione
+            td 50
+            td 100
+          tr
+            td 2x Soap
+            td 50
+            td 100
+        h1 Sub Total: 300
+      .line
+      .form-submit
+        a.form-back(href='') Go back? 
+        input(type='submit' value='Complete Payment')

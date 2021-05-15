@@ -1,0 +1,141 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='css/admin/adminTemplate.css')
+  link(rel='preconnect' href='https://fonts.gstatic.com')
+  link(rel='stylesheet' href='css/admin/adminAddProduct.css')
+  link(href='https://fonts.googleapis.com/css2?family=Poppins:wght@200;500;700;800&display=swap' rel='stylesheet')
+  script(src='js/menu.js' async='')
+  title Document
+section
+  header.header
+    .container
+      .navbar
+        .logo
+          a(href='/welcome')
+            img.img-logo(src='img/bonavita-logo.png' width='180px')
+        nav
+          ul#lists
+            if user.role == 'master'
+              li
+                a(href='/welcome') Welcome
+              li
+                a(href='/adminProducts') Product
+              li
+                a(href='/adminShipping') Shipping
+              li
+                a(href='/acceptOrder') Pending
+              li
+                a(href='/transactionRecords') Transaction Records
+              li
+                a(href='/adminFaq') FAQ
+              li
+                a(href='/adminTestimonials') Testimonials
+              li
+                a(href='/adminRoles') Assign Admin Role
+              li
+                a(href='/adminCompanyProfile') Company Info
+              li 
+                a(href='/adminProfile') My Profile
+              li 
+                a(href='/adminLogout') Logout
+            if user.role == 'encoder'
+              li
+                a(href='/welcome') Welcome
+              li
+                a(href='/adminShipping') Shipping
+              li
+                a(href='/acceptOrder') Pending
+              li
+                a(href='/transactionRecords') Transaction Records
+              li
+                a(href='/adminFaq') FAQ
+              li
+                a(href='/adminProfile') My Profile
+              li
+                a(href='/adminLogout') Testimonials
+            if user.role == 'editor'
+              li
+                a(href='/welcome') Welcome
+              li
+                a(href='/adminFaq') Faq
+              li
+                a(href='/adminTestimonials') Testimonials
+              li
+                a(href='/adminCompanyProfile') Company Info
+              li
+                a(href='/adminProfile') My Profile
+              li
+                a(href='/adminLogout') logout
+        img#menuIcon.menu(src='img/menu-bar.png' onclick='openmenu()')
+  .content-container
+    if product
+        .content-heading
+            h1 Edit Product
+        form.form(action=`/editPage?productId=${product.id}` method='POST' enctype="multipart/form-data")
+            .productName
+                label(for='message') Product Name
+                br
+                input(type='text' placeholder='Input Product Name here...' required='true' name="ProductName" value=`${product.ProductName}`)
+            .productPrice
+                label(for='message') Product Price
+                br
+                input(type='number' step="0.01" placeholder='Input Product Price here...' required='true'  name="ProductPrice" value=`${product.ProductPrice}`)
+            .productDescription
+                label(for='message') Product Description
+                br
+                textarea#productDescription(placeholder='Input Product Description here...' required='true' name="ProductDescription")=product.ProductDescription
+            .productQuantity
+                label(for='message') Product Quantity
+                br
+                input(type='number' placeholder='Input Product Quantity here...' required='true' name="ProductStock" value=`${product.ProductStock}`)
+                input(type='file' name="product")
+                input(type="hidden" name="productImage" value=`${product.ProductImage}`)
+            button(type='submit' name='button') Save Changes
+    if shipping
+        .content-heading
+            h1 Edit Shipping Information
+        form.form(action=`/editPage?shippingId=${shipping.id}` method='POST')
+            .productName
+                label(for='message') Location
+                br
+                input(type='text' placeholder='Input Product Name here...' required='true' value=`${shipping.location}` name="location")
+            .productPrice
+                label(for='message') Shipping Price
+                br
+                input(type='number'  step="0.01"  placeholder='Input Product Price here...' required='true' value=`${shipping.price}` name="price")
+            button(type='submit' name='button') Save Changes
+    if adminFaq
+        .content-heading
+            h1 Edit Faq
+        form.form(action=`/editPage?FaqId=${adminFaq.id}` method='POST')
+            .productName
+                label(for='message') Heading
+                br
+                input(type='text' placeholder='Input Product Name here...' required='true' value=`${adminFaq.contentHeading}` name="contentHeading")
+            .productDescription
+                label(for='message') Body
+                br
+                textarea#productDescription(placeholder='Input Product Description here...' required='true' name="contentBody")=adminFaq.contentBody
+            button(type='submit' name='button') Save Changes
+    if testimonials
+      .content-heading
+          h1 Edit Testimonials
+      form.form(action=`/editPage?testimonialId=${testimonials.id}` method='POST')
+        .productName
+          label(for='message') Author
+          br
+          input(type='text' placeholder='Input Product Name here...' required='true' value=`${testimonials.Author}` name="author")
+        .productName
+          label(for='message') Heading
+          br
+          input(type='text' placeholder='Input Product Name here...' required='true' value=`${testimonials.testimonialHeading}` name="testimonialHeading")
+        .productDescription
+          label(for='message') Body
+          br
+          textarea#productDescription(placeholder='Input Product Description here...' required='true' name="testimonialBody")=testimonials.testimonialBody
+        button(type='submit' name='button') Save Changes
+     
+

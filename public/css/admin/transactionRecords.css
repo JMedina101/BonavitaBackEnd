@@ -1,0 +1,289 @@
+.content-heading {
+    text-align: center;
+}
+.sorting {
+    margin-bottom: 20px;
+
+}
+.sorting-Wrapper {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    margin-bottom: 10px;
+}
+.sorting select {
+    padding: 8px;
+    font-family: 'Poppins';
+    position: relative;
+    left: 70px;
+}
+.typeOfSorting-Container {
+    margin-right: 10px;
+}
+.keyword-container {
+    position: relative;
+    left: 80px;
+}
+.submit {
+  margin-left: 10px;
+  width: 70px !important;
+}
+
+.keyword-container input {
+    padding: 8px;
+    font-family: 'Poppins';
+    width: 350px;
+}
+
+.downloadable-container {
+    display: flex;
+    margin-top: 30px;
+    margin-left: 205px;
+    margin-bottom: 30px;
+}
+.downloadable-container h3 {
+    margin: 0;
+    margin-right: 10px;
+}
+.download-wrap a {
+    margin-right: 10px;
+    padding: 10px;
+
+}
+.excel-btn {
+    background-color: green;
+    color: white;
+    text-decoration: none;
+}
+.pdf-btn {
+    background-color: orange;
+    color: white;
+    text-decoration: none;
+}
+.accept-table tr {
+  text-align: center;
+}
+
+.accept-table tr td {
+  text-align: center;
+}
+
+tr:nth-child(odd) {
+    background-color: #dddddd;
+}
+.accept-table {
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+td, th{
+    border: 1px solid #dddddd;
+    padding: 10px;
+}
+
+.accept-table__heading {
+    text-align: left;
+    background-color: rgb(119, 211, 223) !important;
+    border-radius: 20px;
+}
+
+@media screen and (max-width: 1368px){
+
+}
+
+@media screen and (max-width: 992px){
+  .content-heading{
+    margin-top: 3px;
+    margin-bottom: 20px;
+  }
+
+  .downloadable-container{
+    margin-left: 100px;
+  }
+
+  .typeOfSorting-Container{
+    text-align: center;
+  }
+
+  .sorting-Wrapper{
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .keyword-container input{
+    font-size: 14px;
+    width: 225px;
+  }
+}
+
+@media screen and (max-width: 768px){
+  .keyword-container{
+    left: 4px;;
+    display: inline-block;
+  }
+
+  .keyword-container input{
+    width: 350px;
+  }
+
+  .keyword-container label{
+    margin-right: 5px;
+  }
+
+  .sorting select{
+    left: 4px;
+  }
+
+  .typeOfSorting-Container{
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .downloadable-container{
+    margin-left: 275px;
+  }
+
+  .sorting-Wrapper{
+    display: grid;
+  }
+
+  .content-heading{
+    margin-top: 3px;
+    margin-bottom: 10px;
+  }
+
+  .accept-table__heading{
+    font-size: 13px;
+  }
+
+  .accept-table tr td{
+    font-size: 13px;
+  }
+
+  .btn-add__container{
+    padding: 20px 20px 15px 20px;
+  }
+
+  td ,th{
+    padding: 8px;
+  }
+}
+
+@media screen and (max-width: 600px){
+  .keyword-container{
+    left: 4px;;
+  }
+
+  .keyword-container input{
+    font-size: 13px;
+  }
+
+  .keyword-container label{
+    margin-right: 5px;
+  }
+
+  .sorting select{
+    font-size: 13px;
+    left: 4px;
+  }
+
+  .typeOfSorting-Container{
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .downloadable-container{
+    margin-left: 205px;
+    font-size: 13px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+
+  .sorting-Wrapper{
+    font-size: 13px;
+    display: grid;
+  }
+
+  .content-heading{
+    margin-top: 1px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .accept-table__heading{
+    font-size: 11px;
+  }
+
+  .accept-table tr td{
+    font-size: 11px;
+  }
+
+  .btn-add__container{
+    font-size: 13px;
+    padding: 20px 20px 15px 20px;
+  }
+
+  td ,th{
+    padding: 7.5px;
+  }
+}
+
+@media screen and (max-width: 420px){
+  .keyword-container{
+    left: 4px;;
+  }
+
+  .keyword-container input{
+    font-size: 11px;
+    width: 250px;
+  }
+
+  .keyword-container label{
+    margin-right: 5px;
+  }
+
+  .sorting select{
+    font-size: 11px;
+    left: 4px;
+  }
+
+  .typeOfSorting-Container{
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .downloadable-container{
+    margin-left: 110px;
+    font-size: 11px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  .sorting-Wrapper{
+    font-size: 11px;
+    display: grid;
+  }
+
+  .content-heading{
+    margin-top: 5px;
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+
+  .accept-table__heading{
+    font-size:9px;
+  }
+
+  .accept-table tr td{
+    font-size: 9px;
+  }
+
+  .btn-add__container{
+    font-size: 11px;
+    padding: 20px 20px 15px 20px;
+  }
+
+  td ,th{
+    padding: 3px 3px 3px 3px;
+  }
+}

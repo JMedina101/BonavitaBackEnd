@@ -1,0 +1,53 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='css/admin/adminSignup.css')
+  link(rel='stylesheet' href='css/admin/adminTemplate.css')
+  link(href='https://fonts.googleapis.com/css2?family=Poppins:wght@200;500;700;800&display=swap' rel='stylesheet')
+  script(src='js/index.js' async='')
+  script(src="js/error.js" async='') 
+  link(rel='stylesheet' href='css/client/error.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  script(src='JS/menu.js' async='')
+  title Document
+section
+  .admin-container
+    header.header
+      .container
+        .navbar
+          .logo
+            a(href='/adminSignUp')
+              img.img-logo(src='img/bonavita-logo.png' width='180px')
+          nav
+            ul#lists
+              li
+                a(href='/adminLogin') Login
+              li
+                a(href='/adminSignUp') Sign Up
+          img#menuIcon.menu(src='resources/img/menu-bar.png' onclick='openmenu()')
+  .content-container
+    if error 
+       #confirm
+        #message Error: #{error}
+        button#yes OK
+    p.logo
+      a(href='#')
+        img.img-signup(src='img/bonavita-logo2.png' width='180px')
+    form(action="/admin/signUp",method="POST")
+      p#formtitle  Sign Up 
+      input#name(type='text' name='name' aria-label='First Name' placeholder='Name' required='')
+      br
+      input#email(type='email' name='email' aria-label='E-mail' placeholder='Email' required='')
+      br
+      input#phonenum(type='tel' name='phoneNumber' aria-label='Phone Number' placeholder='Phone Number' required='')
+      br
+      input#password(type='password' name='password' aria-label='Password' placeholder='Password' required='')
+      br
+      input#confirmPassword(type='password' name='confirmPassword' aria-label='Password' placeholder='Confirm Password' required='')
+      br
+      button(type='submit') Sign Up
+      br
+      |                   If you already have an account, 
+      a.anchor-login(href='/adminLogin') Log in

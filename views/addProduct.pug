@@ -1,0 +1,20 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Document
+.editContainer
+  .editHeading
+    h1 Add Product
+  form.form(action='postProduct' method='POST')
+    label(for='') Product Name
+    input(type='text' name='ProductName')
+    label(for='') Product Price
+    input(type='text' name='ProductPrice')
+    label(for='') Product Stock
+    input(type='text' name='ProductStock')
+    label(for='') Product Description
+    input(type='text' name='ProductDescription')
+    input(type='file')
+    input(type='submit')

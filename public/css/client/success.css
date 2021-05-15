@@ -1,0 +1,95 @@
+.header_container h1{
+    text-align: center;
+}
+.header_container h3{
+    margin-left: 5%;
+}
+.pair{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 10%;
+}
+.ordenagainbtn {
+  font-family: inherit;
+}
+.bold {
+  font-weight: 800;
+}
+.summary-order-container{
+    width: 70%;
+    justify-content: space-around;
+    margin: 50px auto;
+    background-color: whitesmoke;
+    padding: 50px;
+}
+.order-summary{
+    justify-content: center;
+}
+.summary-order-container h3{
+    text-align: center;
+}
+
+.tag{
+    flex-basis: 50%;
+}
+.content{
+    flex-basis: 50%;
+}
+.total{
+    padding-top: 10px;
+    border-top: 2px solid #219E97;
+}
+button{
+    border: none;
+    cursor: pointer;
+    padding: 12px;
+    background-color: #219E97;
+    border-radius: 7px;
+    color: white;
+    float: right;
+    clear: both;
+    overflow: hidden;
+}
+.subTotalContainer {
+  margin-top: 10px;
+}
+.pair-Btn {
+  float: right;
+}
+.pair-Btn a {
+  border-radius: 7px;
+  color: white;
+  background-color: #219E97;
+  padding: 10px;
+  margin-right: 10px;
+}
+@media screen and (max-width: 600px){
+  .header_container{
+    font-size: 13px;
+  }
+
+  .invoice-container{
+    font-size: 13px;
+  }
+
+  .summary-order-container button{
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 420px){
+  .header_container{
+    font-size: 11px;
+  }
+
+  .invoice-container{
+    font-size: 11px;
+  }
+
+  .summary-order-container button{
+    font-size: 11px;
+  }
+}

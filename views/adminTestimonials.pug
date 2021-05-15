@@ -1,0 +1,106 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(href='https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap' rel='stylesheet')
+  link(rel='stylesheet' href='css/admin/adminTestimonials.css')
+  link(rel='stylesheet' href='css/admin/adminTemplate.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  link(href='https://fonts.googleapis.com/css2?family=Poppins:wght@200;500;700;800&display=swap' rel='stylesheet')
+  script(src='js/menu.js' async='')
+header.header
+  .container
+    .navbar
+      .logo
+        a(href='/welcome')
+          img.img-logo(src='img/bonavita-logo.png' width='180px')
+      nav
+        ul#lists
+          if user.role == 'master'
+            li
+              a(href='/welcome') Welcome
+            li
+              a(href='/adminProducts') Product
+            li
+              a(href='/adminShipping') Shipping
+            li
+              a(href='/acceptOrder') Pending
+            li
+              a(href='/transactionRecords') Transaction Records
+            li
+              a(href='/adminFaq') FAQ
+            li
+              a(href='/adminTestimonials') Testimonials
+            li
+              a(href='/adminRoles') Assign Admin Role
+            li
+              a(href='/adminCompanyProfile') Company Info
+            li 
+              a(href='/adminProfile') My Profile
+            li 
+              a(href='/adminLogout') Logout
+          if user.role == 'encoder'
+            li
+              a(href='/welcome') Welcome
+            li
+              a(href='/adminShipping') Shipping
+            li
+              a(href='/acceptOrder') Pending
+            li
+              a(href='/transactionRecords') Transaction Records
+            li
+              a(href='/adminFaq') FAQ
+            li
+              a(href='/adminProfile') My Profile
+            li
+              a(href='/adminLogout') logout
+          if user.role == 'editor'
+            li
+              a(href='/welcome') Welcome
+            li
+              a(href='/adminFaq') Faq
+            li
+              a(href='/adminTestimonials') Testimonials
+            li
+              a(href='/adminCompanyProfile') Company Info
+            li
+              a(href='/adminProfile') My Profile
+            li
+              a(href='/adminLogout') logout 
+      img#menuIcon.menu(src='img/menu-bar.png' onclick='openmenu()')
+section
+  .addTestimonials-container
+    .contentContainer
+    form.form(action="/adminTestimonials" method="POST") 
+      label Title
+        br
+        input.titleInput(type='text' placeholder='Add Title here...' name="testimonialHeading")
+      .contentContainer
+        label Content
+        br
+        input.contentInput(type='text' placeholder='Add Content here...' name="testimonialBody")
+      .contentContainer
+        label Author
+        br
+        input.authorInput(type='text' placeholder='Add Author Name here...' name="authorName")
+      .sButton
+        input(type="submit" value="submit")
+  .testimonialsHeader
+    h1 Testimonials
+  
+    if testimonials
+      each testimonial in testimonials
+        .testimonialsContainer
+          div
+            h1= testimonial.testimonialHeading
+          .body
+            p= testimonial.testimonialBody
+          h3.authorTestimonials
+            |  #{testimonial.Author}
+            h3
+          .editAnddelete
+            span.edit
+              a(href=`editPage?testimonialId=${testimonial.id}`) Edit 
+            span.delete
+              a(href=`delete?testimonialId=${testimonial.id}`) Delete   
+  

@@ -1,0 +1,72 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='css/admin/adminTemplate.css')
+  link(rel='stylesheet' href='css/admin/comments.css')
+  link(href='https://fonts.googleapis.com/css2?family=Poppins:wght@200;500;700;800&display=swap' rel='stylesheet')
+  script(src='resources/JS/index.js' async='')
+  title Document
+section
+  .admin-container
+    header.header
+      .container
+        .navbar
+          .logo
+            a(href='adminWelcome.html')
+              img.img-logo(src='img/bonavita-logo.png' width='60px')
+          .logo
+            a(href='adminWelcome.html')
+              img.img-word(src='img/bonavita-logo2.png' width='180px')
+          nav
+            ul#lists
+              li
+                a(href='adminWelcome.html') Welcome
+              li
+                a(href='adminProducts.html') Product
+              li
+                a(href='adminShipping.html') Shipping
+              li
+                a(href='adminAcceptOrder.html') Accept Order
+              li
+                a(href='transactionRecords.html') Transaction Records
+              li
+                a(href='adminFaq.html') FAQ
+              li
+                a(href='comments.html') Products ratings
+              li
+                a(href='adminRole.html') Assign Admin Role
+              li
+                a(href='companyInfo.html') Company Info
+          img.menu(src='img/menu-bar.png' onclick='openmenu()')
+  .content-container
+    .content__heading
+      h1 View Product Comments
+    .product-select
+      select(name='' id='')
+        option(value='') Product 1
+        option(value='') Product 2
+        option(value='') Product 3
+        option(value='') Product 4
+    .comments
+      h1 Comments: 
+      .comments-wrapper
+        .comment-container
+          .comment-body
+            | Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur iusto ipsum dolorem nisi cupiditate distinctio natus nobis quae, doloribus alias, eligendi voluptatem nostrum deleniti provident quidem odio suscipit sit! Laborum?
+          .person-logo
+          .avatar-name
+            h1 Aang
+        .comment-container
+          .comment-body
+            | Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur iusto ipsum dolorem nisi cupiditate distinctio natus nobis quae, doloribus alias, eligendi voluptatem nostrum deleniti provident quidem odio suscipit sit! Laborum?
+          .person-logo
+          .avatar-name
+            h1 Aang
+        .comment-container
+          .comment-body
+            | Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur iusto ipsum dolorem nisi cupiditate distinctio natus nobis quae, doloribus alias, eligendi voluptatem nostrum deleniti provident quidem odio suscipit sit! Laborum?
+          .person-logo
+          .avatar-name
+            h1 Aang

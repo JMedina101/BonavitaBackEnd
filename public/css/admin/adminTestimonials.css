@@ -1,0 +1,67 @@
+.testimonialsHeader{
+  text-align: center;
+  padding: 30px;
+}
+
+.testimonialsContainer {
+    background-color: ivory;
+    padding: 40px;
+    margin-bottom: 30px;
+    text-align: justify;
+    width: 80%;
+    margin-left: 10%;
+
+}
+
+.authorTestimonials{
+  margin-top: 10px;
+  margin-left: 90%;
+}
+
+.addTestimonials-container {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  margin-left: 10%;
+}
+
+.titleInput {
+    padding: 10px;
+    font-family: 'Poppins';
+}
+
+.contentInput {
+    padding: 10px;
+    font-family: 'Poppins';
+    width: 80%;
+    height: 150px;;
+}
+
+.authorInput {
+    padding: 10px;
+    font-family: 'Poppins';
+}
+
+.addTestimonials-container a {
+    color: green;
+    text-decoration: none;
+    padding: 10px;
+    background-color: grey;
+}
+
+.sButton{
+  margin-top: 20px;
+}
+
+.contentContainer{
+  margin-bottom: 10px;
+}
+.editAnddelete {
+  position: relative;
+  top: 30px;
+}
+.editAnddelete .edit a {
+  color: blue;
+}
+.editAnddelete .delete a {
+  color: red;
+}

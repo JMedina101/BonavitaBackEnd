@@ -1,0 +1,104 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='css/admin/adminTemplate.css')
+  link(rel='stylesheet' href='css/admin/adminRole.css')
+  link(href='https://fonts.googleapis.com/css2?family=Poppins:wght@200;500;700;800&display=swap' rel='stylesheet')
+  script(src='js/index.js' async='')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  script(src='js/menu.js' async='')
+  title Document
+section
+  .admin-container
+    header.header
+      .container
+        .navbar
+          .logo
+            a(href='/welcome')
+              img.img-logo(src='img/bonavita-logo.png' width='180px')
+          nav
+            ul#lists
+              if user.role == 'master'
+                li
+                  a(href='/welcome') Welcome
+                li
+                  a(href='/adminProducts') Product
+                li
+                  a(href='/adminShipping') Shipping
+                li
+                  a(href='/acceptOrder') Pending
+                li
+                  a(href='/transactionRecords') Transaction Records
+                li
+                  a(href='/adminFaq') FAQ
+                li
+                  a(href='/adminTestimonials') Testimonials
+                li
+                  a(href='/adminRoles') Assign Admin Role
+                li
+                  a(href='/adminCompanyProfile') Company Info
+                li 
+                  a(href='/adminProfile') My Profile
+                li 
+                  a(href='/adminLogout') Logout
+              if user.role == 'encoder'
+                li
+                  a(href='/welcome') Welcome
+                li
+                  a(href='/adminShipping') Shipping
+                li
+                  a(href='/acceptOrder') Pending
+                li
+                  a(href='/transactionRecords') Transaction Records
+                li
+                  a(href='/adminFaq') FAQ
+                li
+                  a(href='/adminProfile') My Profile
+                li
+                  a(href='/adminLogout') Testimonials
+              if user.role == 'editor'
+                li
+                  a(href='/welcome') Welcome
+                li
+                  a(href='/adminFaq') Faq
+                li
+                  a(href='/adminTestimonials') Testimonials
+                li
+                  a(href='/adminCompanyProfile') Company Info
+                li
+                  a(href='/adminProfile') My Profile
+                li
+                  a(href='/adminLogout') logout
+          img#menuIcon.menu(src='img/menu-bar.png' onclick='openmenu()')
+  .content-container
+    .content__heading
+      h1 Create an Admin
+    .adminRole-container
+      form.form(action="/adminRoles" method="POST")
+        input.email-input.admin-input(type='email' placeholder='Email' name="email")
+        select.admin-input(name='role' id='')
+          option(value='' selected='true' disabled='') Select Admin Role
+          option(value='editor') Editor
+          option(value='master') Master
+          option(value='encoder') Encoder
+        input.submit(type='submit')
+    .table
+      .admin-Heading__container
+        h1 Created Admins
+      table.accept-table
+        tr.accept-table__heading
+          th Admin Email
+          th Priviledge Given
+          th Date Given
+          th Delete
+        if admin
+        each admins in admin
+            tr
+              td= admins.email
+              td= admins.role
+              td= admins.date
+              td
+                a.delete-btn(href=`/delete?adminId=${admins.id}`)
+                  i.fa.fa-trash

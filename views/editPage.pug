@@ -1,0 +1,49 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='css/client/edit.css')
+  script(src='js/menu.js' async='')
+  title Document
+.editContainer
+    if shipping
+        .editHeading
+        h1 Edit Shipping
+        form.form(action=`/editPage?shippingId=${shipping.id}` method='POST')
+            label(for='') Shipping Location
+            input(type='text' value=`${shipping.location}` name="location")
+            label(for='') Shipping Price
+            input(type='text' value=`${shipping.price}` name="price")
+            input(type='submit')
+    if product
+        .editHeading
+        h1 Edit Product
+        form.form(action=`/editPage?productId=${product.id}` method='POST')
+            .edit-container
+                label(for='') Product Name
+                input(type='text' value=`${product.ProductName}` name="ProductName")
+            .edit-container
+                label(for='') Product Price
+                input(type='text' value=`${product.ProductPrice}` name="ProductPrice")
+            .edit-container 
+                label(for='') Product Stock
+                input(type='text' value=`${product.ProductStock}` name="ProductStock")
+            .edit-container 
+                label(for='') Product Description
+                input(type='text' value=`${product.ProductDescription}` name="ProductDescription")
+            .edit-container 
+                input(type="file" value="Upload new Image")
+            a(href="") 
+            input(type='submit') 
+    if adminFaq
+        .editHeading
+        h1 edit faq Content
+        form.form(action=`/editPage?FaqId=${adminFaq.id}` method='POST')
+            label(for='') Heading
+            input(type='text' value=`${adminFaq.contentHeading}` name="contentHeading")
+            label(for='') Body
+            input(type='text' value=`${adminFaq.contentBody}` name="contentBody")
+            input(type='submit')
+        
+

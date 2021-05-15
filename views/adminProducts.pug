@@ -1,0 +1,169 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='css/admin/adminTemplate.css')
+  link(rel='preconnect' href='https://fonts.gstatic.com')
+  link(href='https://fonts.googleapis.com/css2?family=Poppins:wght@200;500;700;800&display=swap' rel='stylesheet')
+  link(rel='stylesheet' href='css/admin/adminProducts.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  script(src='js/index.js' async='')
+  script(src='js/menu.js' async='')
+  title Document
+section
+  .admin-container
+    header.header
+      .container
+        .navbar
+          .logo
+            a(href='/welcome')
+              img.img-logo(src='img/bonavita-logo.png' width='180px')
+          nav
+            ul#lists
+              if user.role == 'master'
+                li
+                  a(href='/welcome') Welcome
+                li
+                  a(href='/adminProducts') Product
+                li
+                  a(href='/adminShipping') Shipping
+                li
+                  a(href='/acceptOrder') Pending
+                li
+                  a(href='/transactionRecords') Transaction Records
+                li
+                  a(href='/adminFaq') FAQ
+                li
+                  a(href='/adminTestimonials') Testimonials
+                li
+                  a(href='/adminRoles') Assign Admin Role
+                li
+                  a(href='/adminCompanyProfile') Company Info
+                li 
+                  a(href='/adminProfile') My Profile
+                li 
+                  a(href='/adminLogout') Logout
+              if user.role == 'encoder'
+                li
+                  a(href='/welcome') Welcome
+                li
+                  a(href='/adminShipping') Shipping
+                li
+                  a(href='/acceptOrder') Pending
+                li
+                  a(href='/transactionRecords') Transaction Records
+                li
+                  a(href='/adminFaq') FAQ
+                li
+                  a(href='/adminProfile') My Profile
+                li
+                  a(href='/adminLogout') Testimonials
+              if user.role == 'editor'
+                li
+                  a(href='/welcome') Welcome
+                li
+                  a(href='/adminFaq') Faq
+                li
+                  a(href='/adminTestimonials') Testimonials
+                li
+                  a(href='/adminCompanyProfile') Company Info
+                li
+                  a(href='/adminProfile') My Profile
+                li
+                  a(href='/adminLogout') logout
+          img#menuIcon.menu(src='img/menu-bar.png' onclick='openmenu()')
+  // edit modal
+  .content-container
+    #editModal.modal
+      // Modal content
+      .modal-content
+        span.closeEdit &times;
+        h1 Edit a Product
+        form.add-product__form(action='adminProducts.html' method='POST')
+          .productContainer
+            .productName
+              input.product-name(type='text' placeholder='Product Name: ')
+            .productPrice
+              input.product-price(type='text' placeholder='Product Price: ')
+            .productDescription
+              textarea.text-area(name='' id='' cols='80' rows='10' placeholder='Product Description..')
+            .productStock
+              input.product-stock(type='text' placeholder='Product Stock: ')
+          input.admin-form__submit(type='submit')
+    // add product modal
+    #myModal.modal
+      // Modal content
+      .modal-content
+        span.close &times;
+        h1 Add a Product
+        form.add-product__form(action='adminProducts.html' method='POST')
+          .productContainer
+            .productName
+              input.product-name(type='text' placeholder='Product Name: ')
+            .productPrice
+              input.product-price(type='text' placeholder='Product Price: ')
+            .productDescription
+              textarea.text-area(name='' id='' cols='80' rows='10' placeholder='Product Description..')
+            .productStock
+              input.product-stock(type='text' placeholder='Product Stock: ')
+          input.admin-form__submit(type='submit')
+    .content-heading
+      h1 Product
+    .btn-add__container
+      a(href="getAddProductPage")#add-product.addProductBtn Add a Product
+    .content-Product__container
+      table.accept-table
+        tr.accept-table__heading
+          th Name
+          th Price
+          th Description
+          th Stock
+          th Img
+          th
+          th
+        each Product in Products
+          tr
+            td= Product.ProductName
+            td= Product.ProductPrice
+            td
+              = Product.ProductDescription
+            td= Product.ProductStock
+            td
+             img.product-img(src=`img/${Product.ProductImage}`,alt=`${Product.ProductImage}`)
+            td 
+              a.edit-btn(href=`editPage?productId=${Product.id}`) edit
+            td
+              a.delete-btn(href=`delete?productId=${Product.id}`)
+                i.fa.fa-trash
+script.
+  var modal = document.getElementById("myModal");
+  var btn = document.getElementById("add-product");
+  var span = document.getElementsByClassName("close")[0];
+  var spanEdit = document.getElementsByClassName("closeEdit")[0];
+  // for edit modal
+  var editModal = document.getElementById("editModal");
+  var btnEdit    = document.getElementsByClassName("edit-btn");
+  btn.onclick = function() {
+  console.log("working");
+  modal.style.display = "block";
+  }
+  for (var i = 0; i < btnEdit.length; i++) {
+  btnEdit[i].addEventListener('click', function(){
+  editModal.style.display="block";
+  });
+  }
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+  modal.style.display = "none";
+  }
+  spanEdit.onclick = function() {
+  editModal.style.display="none";
+  }
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+  if (event.target == modal || event.target ==  editModal) {
+  editModal.style.display="none";
+  modal.style.display = "none";
+  }
+  }

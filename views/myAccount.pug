@@ -1,0 +1,133 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='css/client/myAccount.css')
+  link(rel='stylesheet' href='css/client/index.css')
+  link(rel='stylesheet' href='css/client/utlities.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  link(href='https://fonts.googleapis.com/css2?family=Poppins:wght@200;500;700;800&display=swap' rel='stylesheet')
+  script(src='JS/index.js' async='')
+  script(src="JS/menu.js" async='')
+  script(src='js/error.js' async='')
+  link(rel='stylesheet' href='css/client/error.css')
+  
+header.header
+  .container
+    .navbar
+      .logo
+        a(href='/')
+          img.img-logo(src=`img/${profile.logo}` width='200px')
+      .socials
+        ul
+          li
+            a(href=`${profile.lazadaUrl}`)
+              img.social(src='img/lazada-logo.png' height='40px')
+          li
+            a(href=`${profile.facebookUrl}`)
+              img.social(src='img/facebook-logo.png' height='40px')
+      nav
+        ul#lists
+          li
+            a(href='/#products') Products
+          li
+            a(href='/testimonials') Testimonials
+          if user
+            li 
+              a(href="/faq") Faq
+            li 
+              a(href='/userProfile') My Profile
+            li
+              a(href='/logout') Logout
+          else 
+            li
+              a(href='/login') login
+            li
+              a(href='/logout') Sign Up
+      img#menuIcon.menu(src='img/menu-bar.png')
+.floating-cart
+  a(href='/cart' onclick='increaseNumber()')
+    i.fa.fa-shopping-cart
+  span.number 0
+section.my-account-container
+  if error
+      #confirm
+        #message Error: #{error}
+        button#yes OK
+  .my-account-header-container
+    h1 My Account
+  .my-account-navigation-container
+    a.profile.active(href='/userProfile') Profile
+    a.profile(href='/myAddress') My Address
+    a.profile(href='/myTransactions') Orders
+  .my-account-main-container
+    if user
+      form.form(action=`/userProfile/saveChanges?id=${user.id}` method='POST')
+        label(for='username') Username 
+        br
+        input#username(name='username' type='text' value=`${user.name}`)
+        br
+        label(for='firstname') Email 
+        br
+        input#firstname(name='email' type='email' value=`${user.email}`)
+        br
+        label(for='phonenum') Mobile Phone Number
+        br
+        input#phonenum(name='phonenum' type='tel' value=`${user.phoneNumber}`)
+        br
+        input.saveChanges(type='submit' value='Save Changes')
+        br
+        .password-container
+      form.form(action="/userProfile/updatePassword" method="POST") 
+        label(for='firstname') Current Password 
+        br
+        input#firstname(name='currPassword' type='password' placeholder="******")
+        br
+        label(for='firstname') New Password 
+        br
+        input#firstname(name='password'  type='password' placeholder="******")
+        br
+        label(for='firstname') Confirm Password
+        br
+        input#firstname(name='confirmPassword'  type='password' placeholder="******")
+        br
+        input.saveChanges(type='submit'  value='Save Changes')
+
+footer.footer
+  .footer-container
+    .footer-fill
+      .footer-brand
+         ul.brand
+          h3=  profile.companyName
+          if profile.CpNum
+            p Cellphone Number: #{profile.CpNum} 
+          br
+          if profile.TelNum
+            p telephone Number: #{profile.TelNum}
+          br
+          p= profile.Address
+      .footer-social-links
+        ul.social-links
+          li
+            h3 Follow Us:
+          li
+            if profile.facebookUrl
+              a(href=`${profile.facebookUrl}`) Facebook
+          li
+            if profile.twiterUrl
+              a(href=`${profile.twiterUrl}`) Twitter
+          li
+            if profile.instagramUrl
+              a(href=`${profile.instagramUrl}`) Instagram
+      .footer-contact-info
+        ul.contact-info
+          li
+            a(href='aboutus.html') About Us
+          li
+            a(href='') Terms and Conditions
+          li
+            a(href='') Privacy Policy
+          li
+            a(href='faq.html') FAQ
+  .company
+    p &copy; 2021 #{profile.companyName}. All rights reserved.

@@ -1,0 +1,22 @@
+.errorContent{
+  text-align: center;
+}
+
+.error-container{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.contContainer{
+  height: 400px;
+  width: 40%;
+}
+
+#errorHead{
+  text-align: center;
+  font-size: 100px;
+  margin-bottom: 100px;
+}
+.linkLog {
+  color: rgb(40, 40, 241);
+}

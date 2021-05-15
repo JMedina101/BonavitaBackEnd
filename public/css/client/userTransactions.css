@@ -1,0 +1,65 @@
+.header {
+    height: 71px;
+}
+.my-account-container{
+    width: 90%;
+}
+.my-account-header-container{
+    text-align: center;
+    padding-top: 10px;
+}
+.my-account-navigation-container{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    list-style-type: none;
+}
+.my-account-navigation-container a {
+    color: #168C8C;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.my-account-navigation-container a:hover {
+  border-bottom: 2px solid#168C8C;
+}
+.my-account-navigation-container a.active{
+    border-bottom: 2px solid#168C8C;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+.table-heading {
+    text-align: center;
+    margin-top: 10px;
+}
+.transaction-table {
+    position: relative;
+    top: 60px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 200px;
+}
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    text-align: center;
+    font-family: 'Poppins';
+  }
+  th {
+    background-color:rgb(139, 171, 172);
+    height: 80px;
+    font-family: 'Poppins';
+  }
+
+  tr {
+      height: 40px;
+      background-color: rgb(241, 241, 241);
+  }

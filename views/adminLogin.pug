@@ -1,0 +1,53 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='css/admin/adminSignup.css')
+  link(rel='stylesheet' href='css/admin/adminTemplate.css')
+  link(href='https://fonts.googleapis.com/css2?family=Poppins:wght@200;500;700;800&display=swap' rel='stylesheet')
+  script(src='resources/JS/index.js' async='')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  script(src='js/index.js' async='')
+  script(src='js/error.js' async='')
+  script(src='JS/menu.js' async='')
+  link(rel='stylesheet' href='css/client/error.css')
+  title Document
+section
+  .admin-container
+    header.header
+      .container
+        .navbar
+          .logo
+            a(href='/adminLogin')
+              img.img-logo(src='img/bonavita-logo.png' width='180px')
+          nav
+            ul#lists
+              li
+                a(href='/adminLogin') Login
+              li
+                a(href='/adminSignUp') Sign Up
+          img#menuIcon.menu(src='img/menu-bar.png' onclick='openmenu()')
+  .content-container
+    if error
+      #confirm
+        #message Error: #{error}
+        button#yes OK
+    p.logo
+      a(href='index.html')
+        img.img-login(src='img/bonavita-logo2.png' width='200px')
+    form.form(action="/admin/login" method="POST")
+      p#formtitle  Log In 
+      label(for='username') Email: 
+      br
+      input#email(name='email' type='email' required='true')
+      br
+      label(for='password') Password: 
+      br
+      input#password(name='password' type='password' required='true' )
+      br
+      button(type='submit') Log In
+      br
+      .anchors__container
+        span
+          a.anchor-login(href='/adminSignUp') Sign Up

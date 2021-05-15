@@ -1,0 +1,150 @@
+.faq-header__container{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.questions {
+    display: flex;
+    justify-content: space-evenly;
+    top: 200px;
+    list-style-type: none;
+}
+
+.faq-queston__container{
+  margin-bottom: 50px;
+}
+
+.question a {
+    color: rgb(133, 172, 133);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.question a:hover {
+    border-bottom: 2px solid rgb(133, 172, 133); ;
+}
+
+.question-content__container{
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  column-gap: 80px;
+  top: 250px;
+  row-gap: 40px;
+  margin-bottom: 20px;
+}
+
+.question__container{
+  width: 85%;
+}
+
+@media screen and (max-width: 1368px){
+  .question-content__container{
+    top: 250px;
+    text-align: justify;
+  }
+
+  .questions{
+    top: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+
+  .question a{
+    font-size: 16px;
+  }
+
+}
+
+@media screen and (max-width: 992px){
+  .question-content__container{
+    top: 250px;
+    text-align: justify;
+  }
+
+  .questions{
+    top: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+
+  .question a{
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 768px){
+  .question-content__container{
+    grid-template-columns: repeat(auto-fit,minmax(700px, 1fr));
+    top: 200px;
+    text-align: justify;
+  }
+
+  .questions{
+    top: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+
+  .question a{
+    font-size: 16px;
+    padding: 5px;
+  }
+}
+
+
+
+@media screen and (max-width: 600px){
+  .question-content__container{
+    grid-template-columns: repeat(auto-fit,minmax(580px, 1fr));
+    top: 180px;
+    text-align: justify;
+  }
+
+  .questions{
+    top: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+
+  .question__container{
+    width: 80%;
+  }
+
+  .question a{
+    font-size: 16px;
+    padding: 5px;
+  }
+}
+
+@media screen and (max-width: 420px){
+  .question-content__container{
+    grid-template-columns: repeat(auto-fit,minmax(420px, 1fr));
+    top: 150px;
+    text-align: justify;
+    width: 90%;
+    font-size: 11px;
+  }
+  .questions{
+    top: 135px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+
+  .question__container{
+    width: 87.5%;
+  }
+
+  .question a{
+    font-size: 16px;
+    padding: 5px;
+  }
+}

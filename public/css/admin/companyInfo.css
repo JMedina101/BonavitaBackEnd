@@ -1,0 +1,263 @@
+* {
+    box-sizing: border-box;
+}
+.content-container {
+    width: 80%;
+    margin: 0 auto;
+}
+.content-heading {
+    margin-bottom: 60px;
+    text-align: center;
+}
+.content-wrapper{
+    margin-bottom: 30px;
+}
+.content-wrapper label {
+    display: inline-block;
+    width: 30%;
+}
+.content-wrapper input {
+    font-family: 'Poppins';
+}
+.content-files  {
+    outline: none;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(238, 236, 232);
+    display: inline-block;
+    width: 40%;
+}
+
+.social-media-subLinks{
+    margin-bottom: 20px;
+}
+
+.contact-info__container {
+    margin-bottom: 30px;
+}
+.form-submit {
+  text-align: center;
+}
+.form-submit input {
+  outline: none;
+  padding: 5px;
+  background-color: ivory;
+  border: 2px solid black;
+  cursor: pointer;
+}
+.edit-content {
+    color: rgba(46, 112, 173, 0.918);
+}
+
+/* media query */
+@media screen and (max-width: 1368px){
+  .content-heading{
+    font-size: 18px;
+  }
+
+  .comapny-logo__container{
+    font-size: 18px;
+  }
+
+  .banner-container{
+    font-size: 18px;
+  }
+
+  .content-wrapper label{
+    padding-right: 5px;
+  }
+
+  .content-wrapper input{
+    font-size: 18px;
+    padding-left: 8px;
+  }
+
+  .comapny-Name__container{
+    font-size: 15px;
+  }
+
+  .social-media-subLinks{
+    font-size: 18px;
+  }
+
+  .contacts-info__container{
+    font-size: 18px;
+  }
+
+  .content-files{
+    font-size: 18px;
+    padding: 5px;
+  }
+}
+
+@media screen and (max-width: 992px){
+  .content-wrapper label{
+    padding-right: 5px;
+  }
+
+  .content-wrapper input{
+    padding-left: 8px;
+  }
+
+  .content-files{
+    padding: 5px;
+  }
+}
+
+@media screen and (max-width: 768px){
+  .content-heading{
+    font-size: 15px;
+    margin-bottom: 50px;
+  }
+
+  .content-container{
+    width: 95%;
+  }
+
+  .comapny-logo__container{
+    font-size: 15px;
+    display: flex;
+    padding-left: 50px;
+  }
+
+  .banner-container{
+    font-size: 15px;
+    display: flex;
+    padding-left: 50px;
+  }
+
+  .content-wrapper label{
+    padding-right: 5px;
+  }
+
+  .content-wrapper input{
+    font-size: 15px;
+    padding-left: 8px;
+  }
+
+  .comapny-Name__container{
+    padding-left: 50px;
+    font-size: 15px;
+  }
+
+  .social-media-subLinks{
+    padding-left: 50px;
+    font-size: 15px;
+  }
+
+  .contacts-info__container{
+    padding-left: 50px;
+    font-size: 15px;
+  }
+
+  .content-files{
+    font-size: 15px;
+    padding: 5px;
+  }
+}
+
+@media screen and (max-width: 600px){
+  .content-heading{
+    font-size: 13px;
+    margin-bottom: 40px;
+  }
+
+  .content-container{
+    width: 95%;
+  }
+
+  .comapny-logo__container{
+    font-size: 13px;
+    display: flex;
+    padding-left: 40px;
+  }
+
+  .banner-container{
+    font-size: 13px;
+    display: flex;
+    padding-left: 40px;
+  }
+
+  .content-wrapper label{
+    padding-right: 5px;
+  }
+
+  .content-wrapper input{
+    font-size: 13px;
+    padding-left: 8px;
+  }
+
+  .comapny-Name__container{
+    padding-left: 40px;
+    font-size: 13px;
+  }
+
+  .social-media-subLinks{
+    padding-left: 40px;
+    font-size: 13px;
+  }
+
+  .contacts-info__container{
+    padding-left: 40px;
+    font-size: 13px;
+  }
+
+  .content-files{
+    font-size: 13px;
+    padding: 5px;
+  }
+}
+
+@media screen and (max-width: 420px){
+  .content-heading{
+    font-size: 11px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+  }
+
+  .content-container{
+    width: 95%;
+  }
+
+  .comapny-logo__container{
+    font-size: 11px;
+    display: flex;
+    padding-left: 30px;
+  }
+
+  .banner-container{
+    font-size: 11px;
+    display: flex;
+    padding-left: 30px;
+  }
+
+  .content-wrapper label{
+    padding-right: 5px;
+  }
+
+  .content-wrapper input{
+    font-size: 11px;
+    padding-left: 15px;
+  }
+
+  .comapny-Name__container{
+    padding-left: 30px;
+    font-size: 11px;
+  }
+
+  .social-media-subLinks{
+    padding-left: 30px;
+    font-size: 11px;
+  }
+
+  .contacts-info__container{
+    padding-left: 30px;
+    font-size: 11px;
+  }
+
+  .content-files{
+    font-size: 11px;
+    padding: 5px;
+  }
+}

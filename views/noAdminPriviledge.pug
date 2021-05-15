@@ -1,0 +1,61 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(href='https://fonts.googleapis.com/css2?family=Poppins:wght@200;500;700;800&display=swap' rel='stylesheet')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  link(rel='stylesheet' href='css/client/contactus.css')
+  link(rel='stylesheet' href='css/client/errorPromptNotLogin.css')
+  link(rel='stylesheet' href='css/client/utlities.css')
+  script(src='resources/JS/index.js' async='')
+header.header
+  .container
+    .navbar
+      .logo
+        a(href='index.html')
+          img.img-logo(src='img/bonavita-logo.png' width='180px')
+      .socials
+        ul
+          li
+            a(href='https://www.lazada.com.ph/shop/bonavita-philippines/')
+              img.social(src='img/lazada-logo.png' height='50px')
+          li
+            a(href='https://www.facebook.com/bonavitaphilippines2016')
+              img.social(src='img/facebook-logo.png' height='50px')
+      nav
+      img.menu(src='resources/img/menu-bar.png' onclick='openmenu()')
+section.error-container
+  form.contContainer
+    p#errorHead Unauthorized route!
+    .errorContent
+        br
+        a.linkLog(href='/') Go back?
+        
+footer.footer
+  .footer-container
+    .footer-fill
+      .footer-brand
+        ul.brand
+          h3  Bonavita
+          li
+            | Unit 311, 4th Floor, Armal Plaza, C. Raymundo Ave, Brgy Maybunga 1600 Pasig, Philippines
+      .footer-social-links
+        ul.social-links
+          li
+            h3 Follow Us:
+          li
+            a(href='https://www.facebook.com/bonavitaphilippines2016') Facebook
+          li
+            a(href='https://www.lazada.com.ph/shop/bonavita-philippines/') Lazada
+      .footer-contact-info
+        ul.contact-info
+          li
+            a(href='aboutus.html') About Us
+          li
+            a(href='') Terms and Conditions
+          li
+            a(href='') Privacy Policy
+          li
+            a(href='faq.html') FAQ
+  .company
+    p &copy; 2021 Bonavita Philippines. All rights reserved.

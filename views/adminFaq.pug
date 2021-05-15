@@ -1,0 +1,151 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='css/admin/adminTemplate.css')
+  link(rel='stylesheet' href='css/admin/adminShipping.css')
+  link(href='https://fonts.googleapis.com/css2?family=Poppins:wght@200;500;700;800&display=swap' rel='stylesheet')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  script(src='js/index.js' async='')
+  script(src='js/menu.js' async='')
+  
+  title Document
+section
+  .admin-container
+    header.header
+      .container
+        .navbar
+          .logo
+            a(href='/welcome')
+              img.img-logo(src='img/bonavita-logo.png' width='180px')
+          nav
+            ul#lists
+              if user.role == 'master'
+                li
+                  a(href='/welcome') Welcome
+                li
+                  a(href='/adminProducts') Product
+                li
+                  a(href='/adminShipping') Shipping
+                li
+                  a(href='/acceptOrder') Pending
+                li
+                  a(href='/transactionRecords') Transaction Records
+                li
+                  a(href='/adminFaq') FAQ
+                li
+                  a(href='/adminTestimonials') Testimonials
+                li
+                  a(href='/adminRoles') Assign Admin Role
+                li
+                  a(href='/adminCompanyProfile') Company Info
+                li 
+                  a(href='/adminProfile') My Profile
+                li 
+                  a(href='/adminLogout') Logout
+              if user.role == 'encoder'
+                li
+                  a(href='/welcome') Welcome
+                li
+                  a(href='/adminShipping') Shipping
+                li
+                  a(href='/acceptOrder') Pending
+                li
+                  a(href='/transactionRecords') Transaction Records
+                li
+                  a(href='/adminFaq') FAQ
+                li
+                  a(href='/adminProfile') My Profile
+                li
+                  a(href='/adminLogout') logout
+              if user.role == 'editor'
+                li
+                  a(href='/welcome') Welcome
+                li
+                  a(href='/adminFaq') Faq
+                li
+                  a(href='/adminTestimonials') Testimonials
+                li
+                  a(href='/adminCompanyProfile') Company Info
+                li
+                  a(href='/adminProfile') My Profile
+                li
+                  a(href='/adminLogout') logout
+          img#menuIcon.menu(src='img/menu-bar.png' onclick='openmenu()')
+    .content-container
+      .content-wrapper
+        form(action="/postCategory" method="POST")
+          .addCategory-container
+            input.category-input(type='text' placeholder='Add new Category' name="category")
+            input(type="submit" value="Submit")
+        .category-wrapper
+          .content-heading
+            h1 Created FAQ Categories
+          ul.faq-categories
+            each category in FaqCategory
+              li.faq-category
+                a.faq-btn(href=`/adminFaq?category=${category.FaqCategory}`)=category.FaqCategory
+                a.icon-del(href=`deleteCategory?categoryId=${category.id}`)
+                  i.fa.fa-minus-circle(aria-hidden='true')
+        #myModal.modal
+          // Modal content
+          .modal-content
+            span.close &times;
+            h1 Edit a Question
+            form.add-product__form(action='adminProducts.html' method='POST')
+              .heading-container
+                .heading-edit
+                  input.heading-editField(type='text' placeholder='Edit Heading ')
+                .body-container
+                  textarea.body-textArea(name='' id='' cols='80' rows='10' placeholder='Edit Body')
+              input.admin-form__submit(type='submit')
+        .faqs
+          h1 Create FAQs
+          .addQuestion
+           if indicator
+              form(action="/postFAQ" method="POST") 
+                input.addQuestionInput-heading(type='text' placeholder='question heading..' name="heading")
+                textarea( id='' cols='100' rows='10' placeholder='question body..' name="body")
+                input(type='submit')
+           else
+              form(action='adminProducts.html')
+                input.addQuestionInput-heading(type='text' placeholder='question heading..' disabled)
+                textarea(name='' id='' cols='100' rows='10' placeholder='question body..' disabled)
+                input(type='submit')
+          .createdFAQ
+            if indicator
+              .createdFaq-heading
+                  h1 Created FAQs
+              each content in contents
+                .faq_question-container
+                  .edit__container
+                    a.edit-btn(href=`editPage?FaqId=${content.id}`) Edit
+                  .delete__container
+                    a.delete-btn(href=`delete?FaqId=${content.id}`)
+                      i.fa.fa-trash
+                  .question-container
+                    h1=content.contentHeading
+                  .body
+                    p
+                      =content.contentBody
+script.
+  var modal = document.getElementById("myModal");
+  var btn = document.querySelectorAll(".edit-btn");
+  var span = document.getElementsByClassName("close")[0];
+  // for edit modal
+  for (var i = 0; i < btn.length; i++) {
+  btn[i].addEventListener('click', function(){
+  modal.style.display="block";
+  });
+  }
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+  modal.style.display = "none";
+  }
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+  if (event.target == modal ) {
+  modal.style.display = "none";
+  }
+  }

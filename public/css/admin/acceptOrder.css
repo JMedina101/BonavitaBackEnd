@@ -1,0 +1,131 @@
+.admin-container {
+    height: 100vh;
+}
+.content-heading {
+    text-align: center;
+}
+
+.accept-table tr {
+    text-align: center;
+}
+
+.accept-table tr td {
+    text-align: center;
+}
+
+.accept-btn {
+    color: blue;
+    background-color: azure;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 30px;
+    display: inline-block;
+    text-align: center;
+}
+.icon-del {
+  color: red;
+}
+
+tr:nth-child(odd) {
+    background-color: #dddddd;
+}
+.accept-table {
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+td, th{
+    border: 1px solid #dddddd;
+    padding: 10px;
+}
+
+.accept-table__heading {
+    text-align: left;
+    background-color: rgb(119, 211, 223) !important;
+    border-radius: 20px;
+}
+
+/* media query */
+@media screen and (max-width: 1368px){
+  .accept-table__heading{
+    font-size: 18px;
+  }
+
+  .accept-table tr td{
+    font-size: 15px;
+  }
+
+}
+
+@media screen and (max-width: 992px){
+  .accept-table__heading{
+    font-size: 18px;
+  }
+
+  .accept-table tr td{
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 768px){
+.content-heading{
+  font-size: 17px;
+}
+
+.accept-table__heading{
+  font-size: 14px;
+}
+
+.accept-table tr td{
+  font-size: 14px;
+}
+
+td ,th{
+  padding: 8px;
+}
+
+
+}
+
+@media screen and (max-width: 600px){
+  .content-heading{
+    font-size: 13px;
+  }
+
+  .accept-table__heading{
+    font-size: 11px;
+  }
+
+  .accept-table tr td{
+    font-size: 11px;
+  }
+
+  td ,th{
+    padding: 7.5px;
+  }
+
+}
+
+@media screen and (max-width: 420px){
+  .content-heading{
+    font-size: 11px;
+    padding: 10px;
+  }
+
+  .accept-table__heading{
+    font-size:9px;
+  }
+
+  .accept-table tr td{
+    font-size: 9px;
+  }
+
+  .accept-btn{
+    padding: 5px;
+  }
+
+  td ,th{
+    padding: 3px 3px 3px 3px;
+  }
+
+}

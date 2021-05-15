@@ -1,0 +1,110 @@
+.content__heading {
+    text-align: center;
+    padding-top: 21px;
+    padding-bottom: 30px;
+}
+.product-select {
+    text-align: center;
+}
+
+.comments {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    top: 50px;
+    padding-left: 80px;
+}
+.person-logo {
+    position: relative;
+    top: 30px;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    background-color: khaki;
+    margin-bottom: 50px;
+}
+.comment-container {
+    width: 70%;
+    background: khaki;
+    padding: 30px;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+@media screen and (max-width: 1368px){
+  .comments{
+    top: 30px;
+    padding-left: 75px;
+  }
+}
+
+@media screen and (max-width: 992px){
+  .content__heading{
+    padding-top: 21px;;
+    padding-bottom: 20px;
+  }
+
+  .comments{
+    top: 30px;
+    padding-left: 75px;
+  }
+
+}
+
+@media screen and (max-width: 768px){
+  .content__heading{
+    font-size: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .comments{
+    font-size: 15px;
+    top: 30px;
+    padding-left: 75px;
+  }
+
+  .avatar-name{
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 600px){
+  .content__heading{
+    font-size: 13px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .comments{
+    font-size: 13px;
+    top: 30px;
+    padding-left: 50px;
+  }
+
+  .avatar-name{
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 420px){
+  .content__heading{
+    font-size: 11px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .comments{
+    font-size: 11px;
+    top: 30px;
+    padding-left: 35px;
+  }
+
+  .avatar-name{
+    font-size: 11px;
+  }
+
+  .comment-container{
+    width: 90%;
+  }
+}

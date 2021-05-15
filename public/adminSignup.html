@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/private/adminSignup.css">
+    <link rel="stylesheet" href="CSS/shared/adminTemplate.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;500;700;800&display=swap" rel="stylesheet">
+    <script src= "resources/JS/index.js" async></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div class="admin-container">
+          <header class="header">
+              <div class="container">
+                  <div class ="navbar">
+                    <div class="logo">
+                      <a href="index.html"><img src="resources/img/bonavita-logo.png" class="img-logo" width="60px"></a>
+                    </div>
+                    <div class="logo">
+                      <a href="index.html"><img src="resources/img/bonavita-logo2.png" class="img-word" width="180px"></a>
+                    </div>
+                      <nav>
+                          <ul id="lists">
+                            <li class=""><a href="#">Welcome</a></li>
+                            <li class=""><a href="adminProducts.html">Product</a></li>
+                            <li class=""><a href="adminShipping.html">Shipping</a></li>
+                            <li class=""><a href="adminAcceptOrder.html">Accept Order</a></li>
+                            <li class=""><a href="transactionRecords.html">Transaction Records</a></li>
+                            <li class=""><a href="adminFaq.html">FAQ</a></li>
+                            <li class=""><a href="comments.html">Products Ratings</a></li>
+                            <li class=""><a href="#">Assign Admin Role</a></li>
+                            <li class=""><a href="companyInfo.html">Company Info</a></li>
+                          </ul>
+                      </nav>
+                      <img src="resources/img/menu-bar.png" class="menu" onclick="openmenu()">
+                    </div>
+                  </div>
+              </header>
+            </div>
+            <div class="content-container">
+              <p class="logo">
+                  <a href="#"><img src="resources/img/bonavita-logo2.png" class="img-signup" width="180px"></a>
+              </p>
+              <form>
+                  <p id="formtitle"> Sign Up </p>
+                  <input type="text" id="fname" name="firstname" aria-label="First Name" placeholder="First Name" required><br>
+                  <input type="text" id="lname" name="lastname" aria-label="Last Name" placeholder="Last Name" required><br>
+                  <input type="tel" id="phonenum" name="phonenum" aria-label="Phone Number" placeholder="Phone Number" required><br>
+                  <input type="email" id="email" name="email" aria-label="E-mail" placeholder="E-mail" required><br>
+                  <input type="text" id="username" name="username" aria-label="username" placeholder="Username" required><br>
+                  <input type="password" id="password" name="password" aria-label="Password" placeholder="Password" required><br>
+
+                  <button type="submit">Sign Up</button><br>
+
+                  If you already have an account, <a href="login.html" class="anchor-login">Log in</a>
+
+              </form>
+        </div>
+    </section>
+</body>
+</html>

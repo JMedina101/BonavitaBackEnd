@@ -1,0 +1,96 @@
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #d9faf4;
+    font-family: 'Poppins';
+}
+
+.shipping-container {
+    width: 70%;
+    margin: 0 auto;
+    position: relative;
+    top: 30px;
+}
+.shipping-heading h1 {
+    text-align: center;
+}
+
+.shipping__descrip-container {
+    background-color: white;
+    padding: 30px;
+}
+
+/* INPUT FIELDS */
+input[type="text"] , input[type="submit"], select
+{
+    font-family: 'Poppins';
+}
+
+.shipping-fields {
+    background-color: rgb(224, 224, 224);
+    border-radius: 2px;
+    border: none;
+}
+.home-input__address {
+    width: 100%;
+    padding: 8px;
+}
+.postal-code {
+    width: 200px;
+    height: 30px;
+}
+.location-select {
+    padding: 10px;
+}
+.address{
+    margin-bottom: 24px;
+}
+
+/* PAYMENT METHODS */
+.payment-method {
+    margin-top: 50px;
+}
+
+.summary {
+    margin-top: 70px;
+}
+.table-summary {
+    width: 80%;
+    margin: 30px auto;
+}
+.table-summary th {
+    text-align: justify;
+}
+/* edit the number */
+
+.number {
+    width: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    background-color: #a1d6d8;
+    display: inline-block;
+}
+
+/* form button */
+.line {
+    width: 100%;
+    height: 1px;
+    background-color:rgb(212, 212, 212) ;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.form-submit input {
+    border: none;
+    background-color: #73d9c6;
+    padding: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.form-back {
+    color: #0a0a0a;
+    text-decoration: none;
+    margin-right: 10px;
+}

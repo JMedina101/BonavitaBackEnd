@@ -1,0 +1,106 @@
+.header {
+    height: 71px;
+}
+.my-account-container{
+    width: 90%;
+}
+.my-account-header-container{
+    text-align: center;
+    padding-top: 10px;
+}
+.my-account-navigation-container{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    list-style-type: none;
+}
+.my-account-navigation-container a {
+    color: #168C8C;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.my-account-navigation-container a:hover {
+  border-bottom: 2px solid#168C8C;
+}
+.my-account-navigation-container a.active{
+    border-bottom: 2px solid#168C8C;
+}
+.my-account-main-container{
+   width: 80%;
+   margin: 0 auto;
+   text-align: center;
+}
+label{
+    align-content: left;
+}
+.saveChanges {
+    background-color: #168C8C;
+    color: white;
+    font-family: inherit;
+}
+.password-container {
+  margin-top: 50px;
+}
+input{
+    width: 30%;
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border-radius: 7px;
+    text-align: center;
+    border: 1px solid grey;
+}
+
+/* for smaller screen */
+
+@media screen and (max-width: 600px){
+  .my-account-header-container h1{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 50px;
+  }
+
+  .my-account-navigation-container{
+    font-size: 13px;
+    margin-left: 80px;
+  }
+
+  .my-account-main-container{
+    margin-top: 10px;
+    margin-left: 155px;
+    font-size: 13px;
+  }
+
+  .my-account-main-container input{
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 420px){
+  .my-account-header-container h1{
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 30px;
+  }
+
+  .my-account-navigation-container{
+    font-size: 11px;
+    margin-left: 50px;
+  }
+
+  .my-account-main-container{
+    margin-top: 10px;
+    margin-left: 20px;
+    font-size: 11px;
+  }
+
+  .my-account-main-container input{
+    width: 100%;
+  }
+
+}

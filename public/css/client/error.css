@@ -1,0 +1,22 @@
+#confirm {
+    background-color: rgb(221, 149, 149);
+    width: 30%;
+    margin: 0 auto;
+    text-align: center;
+    position: absolute;
+
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%,10%);
+    padding: 30px;
+    z-index: 90;
+}
+#yes {
+    display: inline-block;
+    width: 50%;
+    color: black;
+    padding: 10px;
+    background-color: white;
+    border: 2px solid black;
+    float: none;
+}

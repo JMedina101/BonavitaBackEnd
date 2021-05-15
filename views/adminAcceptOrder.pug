@@ -1,0 +1,109 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='css/admin/adminTemplate.css')
+  link(rel='preconnect' href='https://fonts.gstatic.com')
+  link(href='https://fonts.googleapis.com/css2?family=Poppins:wght@200;500;700;800&display=swap' rel='stylesheet')
+  link(rel='stylesheet' href='css/admin/acceptOrder.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  script(src='js/index.js' async='')
+  script(src='js/menu.js' async='')
+  title Document
+section.dashboard-admin
+  .admin-container
+    header.header
+      .container
+        .navbar
+          .logo
+            a(href='/welcome')
+              img.img-logo(src='img/bonavita-logo.png' width='180px')
+          nav
+            ul#lists
+              if user.role == 'master'
+                li
+                  a(href='/welcome') Welcome
+                li
+                  a(href='/adminProducts') Product
+                li
+                  a(href='/adminShipping') Shipping
+                li
+                  a(href='/acceptOrder') Pending
+                li
+                  a(href='/transactionRecords') Transaction Records
+                li
+                  a(href='/adminFaq') FAQ
+                li
+                  a(href='/adminTestimonials') Testimonials
+                li
+                  a(href='/adminRoles') Assign Admin Role
+                li
+                  a(href='/adminCompanyProfile') Company Info
+                li 
+                  a(href='/adminProfile') My Profile
+                li 
+                  a(href='/adminLogout') Logout
+              if user.role == 'encoder'
+                li
+                  a(href='/welcome') Welcome
+                li
+                  a(href='/adminShipping') Shipping
+                li
+                  a(href='/acceptOrder') Pending
+                li
+                  a(href='/transactionRecords') Transaction Records
+                li
+                  a(href='/adminFaq') FAQ
+                li
+                  a(href='/adminProfile') My Profile
+                li
+                  a(href='/adminLogout') logout
+              if user.role == 'editor'
+                li
+                  a(href='/welcome') Welcome
+                li
+                  a(href='/adminFaq') Faq
+                li
+                  a(href='/adminTestimonials') Testimonials
+                li
+                  a(href='/adminCompanyProfile') Company Info
+                li
+                  a(href='/adminProfile') My Profile
+                li
+                  a(href='/adminLogout') logout
+          img#menuIcon.menu(src='img/menu-bar.png' onclick='openmenu()')
+    .content-container
+      .content-heading
+        h1 Pending Orders
+      table.accept-table
+        tr.accept-table__heading
+          th Transaction Id
+          th Customer Name
+          th Phone Number
+          th Transaction Date
+          th Customer Location
+          th Mode of Payment
+          th Product Name
+          th shipping fee
+          th Sub Total
+        each customer in eachCustomer
+          tr
+            td= customer.id
+            td= customer.name
+            td= customer.phoneNumber
+            td= customer.date
+            td #{customer.homeAddress},#{customer.Street} Street,#{customer.Subdv}, #{customer.Barangay} Barangay,#{customer.City} City,#{customer.province},Postal Code: #{customer.postalCode}
+            td= customer.paymentMethod
+            td
+              each product in customer.products
+                span #{product.productName} X #{product.itemBought}
+                br
+                br
+            td= customer.shippingFee
+            td= customer.subTotal
+            td
+              a.accept-btn(href=`/accepted?transactionId=${customer.id}`) Accept
+            td
+              a.icon-del(href=`/cancelOrder?transactionId=${customer.id}`)
+                i.fa.fa-minus-circle(aria-hidden='true')

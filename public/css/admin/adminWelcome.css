@@ -1,0 +1,36 @@
+.admin-background {
+    background-image:  linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('../../img/admin-banner-main.jpg');;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 88vh;
+    background-position: center;
+    position: relative;
+}
+.admin-heading__container {
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    transform: translate(-15%,-10%);
+}
+.admin-heading__container h1 {
+    color: white;
+    font-size: 35px;
+}
+.bible-verse {
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    text-align: center;
+}
+.date-time {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-70%);
+    color: white;
+    font-size: 20px;
+}

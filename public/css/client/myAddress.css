@@ -1,0 +1,101 @@
+.my-account-container{
+    width: 90%;
+}
+.my-account-header-container{
+    text-align: center;
+    padding-top: 10px;
+}
+.my-account-navigation-container{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    list-style-type: none;
+}
+.my-account-navigation-container a {
+    color: #168C8C;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.my-account-navigation-container a:hover {
+  border-bottom: 2px solid#168C8C;
+}
+.my-account-navigation-container a.active{
+    border-bottom: 2px solid#168C8C;
+}
+.my-account-main-container{
+    width: 100%;
+    margin: 10px 35%;
+}
+.my-address-container{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 10%;
+    margin-top: 15px;
+    margin-bottom: 50px;
+}
+.indiv-address{
+    position: relative;
+    flex-basis: 30%;
+    text-align: center;
+    margin: auto;
+    text-align: center;
+    padding: 10px 30px;
+    border: 2px solid#168C8C;
+    border-radius: 7px;
+}
+.indiv-address-title{
+    margin: 10px;
+}
+
+shipping-container {
+    width: 70%;
+    margin: 0 auto;
+    position: relative;
+    top: 30px;
+    margin-bottom: 50px;
+}
+.shipping-heading h1 {
+    text-align: center;
+}
+
+.shipping__descrip-container {
+    background-color: white;
+    padding: 30px;
+}
+
+/* INPUT FIELDS */
+input[type="text"] , input[type="submit"], select{
+    font-family: 'Poppins';
+}
+
+.shipping-fields {
+    border-radius: 7px;
+    padding:8px;
+}
+.home-input__address {
+    width: 100%;
+    padding: 8px;
+}
+.address{
+    margin-bottom: 24px;
+}
+button{
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    padding: 12px;
+    background-color: #219E97;
+    border-radius: 7px;
+    color: white;
+}
+input{
+    text-align: center;
+}
